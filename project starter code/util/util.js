@@ -9,7 +9,7 @@ import Jimp from "jimp";
 //    inputURL: string - a publicly accessible url to an image file
 // RETURNS
 //    an absolute path to a filtered image locally saved file
- export async function filterImageFromURL(inputURL) {
+export async function filterImageFromURL(inputURL) {
   return new Promise(async (resolve, reject) => {
     try {
       const photo = await Jimp.read(inputURL);
@@ -23,6 +23,7 @@ import Jimp from "jimp";
           resolve(outpath);
         });
     } catch (error) {
+      console.error("Error in filterImageFromURL: ", error);
       reject(error);
     }
   });
@@ -33,7 +34,7 @@ import Jimp from "jimp";
 // useful to cleanup after tasks
 // INPUTS
 //    files: Array<string> an array of absolute paths to files
- export async function deleteLocalFiles(files) {
+export async function deleteLocalFiles(files) {
   for (let file of files) {
     fs.unlinkSync(file);
   }

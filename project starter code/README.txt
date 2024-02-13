@@ -1,0 +1,2 @@
+endpoint URL = http://filtered-image-dev.us-east-1.elasticbeanstalk.com
+200 response = /filteredimage?image_url=https://www.shutterstock.com/image-photo/mini-roses-thrive-bright-light-260nw-2230886199.jpg
